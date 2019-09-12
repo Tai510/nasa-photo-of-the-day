@@ -6,22 +6,25 @@ import styled, { css } from 'styled-components'
 
 const MainApp = styled.div`
 text-align: center;
+background-image: url('https://images8.alphacoders.com/685/685661.jpg')
 `;
 
 const H1 = styled.h1`
-  border: 3px solid grey;
-  margin: 0px 508px;
+  border: 3px solid white;
+  margin: 0 315px;
   height: 50px;
   padding-top: 5px;
   background-color: #6D89A6;
   color: white;
   text-shadow: 1px 1px black;
   border-top: 3px solid #6D89A6;
+  border-bottom: 3px solid #6D89A6;
+
 `;
 
 const NasaIcons = styled.div `
-  border: 3px solid grey;
-  margin: 0 508px;
+  border: 3px solid white;
+  margin: 0 315px;
   height: 50px;
   background-color: #6D89A6;
   color: white;
@@ -31,26 +34,29 @@ const NasaIcons = styled.div `
   display: flex;
   justify-content: space-between;
   font-weight: bolder;
+  padding: 20px 35px;
 `
 
 
 function App() {
-  const [image , setImage] = useState();  
+  const [ image , setImage ] = useState();  
   const [ title, setTitle ] = useState();
+  const [ explanation, setExplanation ] = useState();
   const [ date, setDate ] = useState();
   const [ copyright, setCopyright ] = useState();
 
   useEffect(() => {
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=1pcsXqgloQjpDorKhVxy62ya2XNMig8jJAD4V1xc')
     .then((res) => {
-        setImage(res.data.url);
+        setImage(res.data.hdurl);
         setTitle(res.data.title);
+        setExplanation(res.data.explanation);
         setDate(res.data.date);
         setCopyright(res.data.copyright);
         return res;  
     })
     .then((res) => {
-      console.log(res.data)
+      console.log('data', res.data)
     })
     .catch(err => {
       console.log('Cant find Image' , err)
@@ -60,11 +66,8 @@ function App() {
 
   return (
     <MainApp>
-        <NasaIcons>
-          <i class="fas fa-user-astronaut"></i> Nasa <i class="fas fa-rocket"></i>
-        </NasaIcons>
-        <H1>Photo Of The Day</H1>
-        <Image src={image} title={title} date={date} copyright={copyright} />
+        <H1>Picture Of The Day</H1>
+        <Image src={image} title={title} explanation={explanation} date={date} copyright={copyright} />
     </MainApp>
   );
 }
