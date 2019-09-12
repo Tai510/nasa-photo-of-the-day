@@ -33,7 +33,7 @@
 } */
 
 
-.image-style {
+/* .image-style {
   height: 420px;
   width: 420px;
   border: 3px solid grey;
@@ -48,9 +48,9 @@
   color: white;
   text-shadow: 1px 1px black;
   border-top: 3px solid #6D89A6;
-}
+} */
 
-.nasa-icons {
+/* .nasa-icons {
   border: 3px solid grey;
   margin: 0 508px;
   height: 50px;
@@ -62,25 +62,25 @@
   display: flex;
   justify-content: space-between;
   font-weight: bolder;
-}
+} */
 
-span {
+/* span {
   font-weight: bolder;
   font-size: 25px
-}
+} */
 
-p {
+/* p {
   font-weight: bolder;
   font-size: 20px
-}
+} */
 
-.image-section {
+/* .image-section {
   border: 3px solid grey;
   margin: 5px 508px;
   background-color: #6D89A6;
   color: white;
   text-shadow: 1px 1px black;
-}
+} */
 
 #copyright {
   font-size: 15px;
