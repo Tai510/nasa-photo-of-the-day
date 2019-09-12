@@ -12,12 +12,6 @@ font-weight: bolder;
 font-size: 25px
 `;
 
-const Span2 = styled.span`
-margin-bottom: 20px;
-font-size: 30px;
-font-weight: bolder;
-`;
-
 const Para = styled.p`
 font-weight: bolder;
 font-size: 20px;
@@ -31,21 +25,23 @@ color: white;
 text-shadow: 1px 1px black;
 `;
 
+const ImageDiv = styled.div`
+`
+
 
 
 
 export default function Image (props) {
     console.log("props", props)
     return (
-      <div>
+      <ImageDiv>
           <ImageStyle src={props.src}>
           </ImageStyle>
        <ImageSection>
           <Para id='title-section' title={props.title}> <Span>Title :</Span>  {props.title}</Para>
-          <Span2 id='span'>Explanation</Span2>
           <Para id='explanation' title={props.title}>{props.explanation}</Para>
           <Para id='copyright' copyright={props.copyright}> Copyright © {props.date} {props.copyright}.</Para>
        </ImageSection>
-     </div>
+     </ImageDiv>
     );
 }

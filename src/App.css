@@ -105,3 +105,11 @@
   border-bottom: 1px solid white;
   padding-bottom: 20px;
 }
+
+.header {
+  display: flex;
+}
+
+.imageDiv {
+  border: 1px solid red;
+}
